@@ -145,13 +145,8 @@ int pico_icmp4_frag_expired(struct pico_frame *f);
 int pico_icmp4_ping(char *dst, int count, int interval, int timeout, int size, void (*cb)(struct pico_icmp4_stats *));
 int pico_icmp4_ping_abort(int id);
 
-#ifdef PICO_SUPPORT_ICMP4
 int pico_icmp4_packet_filtered(struct pico_frame *f);
 int pico_icmp4_param_problem(struct pico_frame *f, uint8_t code);
-#else
-# define pico_icmp4_packet_filtered(f) (-1)
-# define pico_icmp4_param_problem(f, c) (-1)
-#endif /* PICO_SUPPORT_ICMP4 */
 
 #define PICO_PING_ERR_REPLIED 0
 #define PICO_PING_ERR_TIMEOUT 1
