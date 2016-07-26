@@ -167,6 +167,10 @@ static int pico_ipv4_frag_match(struct pico_frame *a, struct pico_frame *b)
 
 static void pico_fragments_complete(unsigned int bookmark, uint8_t proto, uint8_t net)
 {
+    (void) bookmark;
+    (void) proto;
+    (void) net;
+
     if (0) {}
 
 #if defined(PICO_SUPPORT_IPV4) && defined(PICO_SUPPORT_IPV4FRAG)
@@ -344,6 +348,8 @@ static int pico_fragments_reassemble(struct pico_tree *tree, unsigned int len, u
 
 static uint16_t pico_fragments_get_header_length(uint8_t net)
 {
+    (void) net;
+
     if (0) {}
 
 #if defined(PICO_SUPPORT_IPV4) && defined(PICO_SUPPORT_IPV4FRAG)
@@ -364,6 +370,8 @@ static uint16_t pico_fragments_get_header_length(uint8_t net)
 
 static int pico_fragments_get_more_flag(struct pico_frame *frame, uint8_t net)
 {
+    (void) net;
+
     if (!frame)
     {
       frag_dbg("no frame given to determine more flag\n");
@@ -390,6 +398,8 @@ static int pico_fragments_get_more_flag(struct pico_frame *frame, uint8_t net)
 
 static uint32_t pico_fragments_get_offset(struct pico_frame *frame, uint8_t net)
 {
+    (void) net;
+
     if (!frame)
     {
       frag_dbg("no frame given to determine offset\n");
