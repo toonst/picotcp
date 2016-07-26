@@ -194,6 +194,7 @@ ifeq ($(ARCH),shared)
 endif
 
 %.o:%.c deps
+	@echo "PREFIX: $(PREFIX)"
 	$(CC) -c $(CFLAGS) -o $@ $<
 
 CORE_OBJ= stack/pico_stack.o \
