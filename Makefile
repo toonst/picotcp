@@ -10,7 +10,7 @@ STRIP_BIN:=$(CROSS_COMPILE)strip
 TEST_LDFLAGS=-pthread  $(PREFIX)/modules/*.o $(PREFIX)/lib/*.o -lvdeplug
 LIBNAME:="libpicotcp.a"
 
-PREFIX?=$(PWD)/build
+PREFIX?=$(CURDIR)/build
 ifndef PREFIX
 $(error PREFIX is not set)
 endif
