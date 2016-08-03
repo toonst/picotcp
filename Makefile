@@ -11,6 +11,9 @@ TEST_LDFLAGS=-pthread  $(PREFIX)/modules/*.o $(PREFIX)/lib/*.o -lvdeplug
 LIBNAME:="libpicotcp.a"
 
 PREFIX?=$(PWD)/build
+ifndef PREFIX
+$(error PREFIX is not set)
+endif
 DEBUG?=1
 PROFILE?=0
 PERF?=0
